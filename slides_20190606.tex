@@ -1,0 +1,110 @@
+\documentclass[UTF8,aspectratio=1610,10pt]{ctexbeamer}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{color,xcolor}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{amsthm}
+% enable full XeLaTeX power
+\usepackage{xltxtra}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetheme{Berlin}
+%\usetheme{CambridgeUS}
+\usefonttheme[onlymath]{serif}
+\usecolortheme{beaver}
+
+\newtheorem{proposition}[theorem]{命题}
+\setbeamertemplate{theorems}[numbered]
+\begin{document}
+
+\title[Blood Diseases Diagnosis]{血液疾病辅助诊断方法研究}
+\author[ ]{ }
+\institute[math]{}
+\date[ ]{\today}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{血液样本数据指标项}
+
+\begin{table}
+\centering
+\caption{血常规指标项（正负样本字段）}
+\begin{tabular}{|l|l||l|l|}
+\toprule
+指标项	&	统一字段名 & 指标项	&	统一字段名 \\
+\midrule
+平均血红蛋白含量	&	MCH	&	中性粒细胞比率	&	NEUT\_P	\\
+平均血红蛋白浓度	&	MCHC	&	中性粒细胞计数	&	NEUT	\\
+红细胞平均体积	&	MCV	&	血小板压积	&	PCT	\\
+平均血小板体积	&	MPV	&	\underline{红细胞分布宽度}	&	\underline{RDW}	\\
+嗜碱性粒细胞计数	&	BAS	&	淋巴细胞计数	&	LY	\\
+嗜碱性粒细胞比率	&	BAS\_P	&	淋巴细胞比率	&	LY\_P	\\
+嗜酸性粒细胞计数	&	EOS	&	单核细胞计数	&	MONO	\\
+嗜酸性粒细胞比率	&	EOS\_P	&	单核细胞比率	&	MONO\_P	\\
+血红蛋白	&	HB	&	红细胞计数	&	RBC	\\
+血小板分布宽度	&	PDW	&	红细胞压积	&	HCT	\\
+血小板计数	&	PLT	&	性别	&	Sex	\\
+白细胞计数	&	WBC	&	年龄	&	Age	\\
+诊断结果	&	Result	&		&	\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{正样本数据}
+\begin{table}
+\caption{疾病分类汇总数据}
+\centering
+\begin{tabular}{|l|r|}
+\toprule
+疾病分类	&	总数	\\
+\midrule
+淋巴瘤	&	5202	\\
+多发性骨髓瘤[卡勒病] (M97320/3)	&	2183	\\
+急性髓样白血病	&	2051	\\
+血小板减少性紫癜	&	1155	\\
+急性淋巴细胞白血病	&	1154	\\
+过敏性紫癜[亨诺克(－舍恩莱因)紫癜]	&	1105	\\
+再生障碍性贫血 NOS	&	458	\\
+噬血细胞综合症	&	374	\\
+骨髓增生异常综合征	&	229	\\
+\bottomrule
+合计	&	13911	\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{负样本数据}
+合计：728,599
+\end{frame}
+
+\begin{frame}
+\frametitle{实验流程}
+\begin{enumerate}
+  \item 样本比例
+	\begin{itemize}
+	  \item 1 : 1
+	  \item 1 : 2
+	  \item 1 : 5
+	  \item 1 : 10
+	\end{itemize}
+  \item 训练模型
+	  \begin{itemize}
+		  \item 逻辑回归
+		  \item 随机森林
+		  \item Light GBM
+		  \item XGBoost
+		  \item 神经网络
+		\end{itemize}
+  \item 记录结果参数与过程
+\end{enumerate}
+
+\end{frame}
+
+\end{document}
