@@ -28,6 +28,8 @@
 \begin{frame}
 \frametitle{血液样本数据指标项}
 
+\section{背景}
+
 \begin{table}
 \centering
 \caption{血常规指标项（正负样本字段）}
@@ -59,21 +61,21 @@
 \begin{table}
 \caption{疾病分类汇总数据}
 \centering
-\begin{tabular}{|l|r|}
+\begin{tabular}{|l|l|r|}
 \toprule
-疾病分类	&	总数	\\
+疾病分类	& 英文对照	&总数	\\
 \midrule
-淋巴瘤	&	5202	\\
-多发性骨髓瘤[卡勒病] (M97320/3)	&	2183	\\
-急性髓样白血病	&	2051	\\
-血小板减少性紫癜	&	1155	\\
-急性淋巴细胞白血病	&	1154	\\
-过敏性紫癜[亨诺克(－舍恩莱因)紫癜]	&	1105	\\
-再生障碍性贫血 NOS	&	458	\\
-噬血细胞综合症	&	374	\\
-骨髓增生异常综合征	&	229	\\
+淋巴瘤	& Lymphoma &	5202	\\
+多发性骨髓瘤[卡勒病] (M97320/3)	&	&2183	\\
+急性髓样白血病	&	&2051	\\
+血小板减少性紫癜	&	&1155	\\
+急性淋巴细胞白血病	&	&1154	\\
+过敏性紫癜[亨诺克(－舍恩莱因)紫癜]	&	&1105	\\
+再生障碍性贫血 NOS	&	&458	\\
+噬血细胞综合症	&	&374	\\
+骨髓增生异常综合征	&	&229	\\
 \bottomrule
-合计	&	13911	\\
+合计	&	&13911	\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -104,6 +106,27 @@
 		\end{itemize}
   \item 记录结果参数与过程
 \end{enumerate}
+
+\end{frame}
+
+\section{Problems}
+\subsection{Samples}
+
+\begin{frame}
+\frametitle{Imbalanced Class Distribution(aka. Skewed Class)}
+\begin{itemize}
+  \item Challenges with Standard Machine Learning Techniques
+  
+
+  \item Resampling Techniques
+  \item Algorithmic Ensemble Techniques
+  
+\end{itemize}
+\end{frame}
+
+\subsection{Imbalanced Data}
+\begin{frame}
+\frametitle{Challenges with Standard Machine Learning Techniques}
 
 \end{frame}
 
