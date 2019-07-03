@@ -10,6 +10,7 @@
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{fontawesome}
 \usetheme{Berlin}
 %\usetheme{CambridgeUS}
 \usefonttheme[onlymath]{serif}
@@ -125,9 +126,100 @@
 \end{frame}
 
 \subsection{Imbalanced Data}
-\begin{frame}
-\frametitle{Challenges with Standard Machine Learning Techniques}
 
+\begin{frame}
+\frametitle{Resampling Techniques}
+\begin{itemize}
+\item Random Under-Sampling: randomly \textbf{eliminate} \textbf{majority} class examples
+\begin{itemize}
+  \item[\faThumbsOUp] improve run time and storage problems
+  \item[\faThumbsODown] information loss \& biased sample
+\end{itemize}
+
+\item Random Over-Sampling: randomly \textbf{replicate} instances in the \textbf{minority} class 
+  	\begin{itemize}
+  	\item[\faThumbsOUp] no information loss \& Outperforms under sampling
+  	\item[\faThumbsODown] overfitting
+	\end{itemize}
+	
+\item Cluster-Based Over Sampling: K-means clustering
+\item Informed Over Sampling: Synthetic Minority Over-sampling Technique
+\begin{itemize}
+  \item[\faThumbsOUp] Mitigates overfitting \& No loss of useful information
+  \item[\faThumbsODown] SMOTE can introduce additional noise \& is not very effective for high dimensional data
+\end{itemize}
+
+\item Modified synthetic minority oversampling technique (MSMOTE)
+\begin{itemize}
+  \item Security/Safe samples: k nearest neighbors
+  \item Border samples: nearest neighbor
+  \item Latent nose samples: nothing
+\end{itemize}
+\end{itemize}
 \end{frame}
+
+\section{Machine Learning Model}
+\begin{frame}
+\frametitle{P vs NP，二分类，Train 1:1 , Test 1:1000, Random Forest}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/1to1-1t1000.jpg}	
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{P vs NP，二分类，Train 1:1 , Test 1:1000, XGBoost}
+\begin{figure}
+\centering
+\includegraphics[width=.75\textwidth]{images/xgboost-1t1000.jpg}	
+\end{figure}
+\end{frame}
+
+
+\section{Prevalence of Blood Disorders}
+
+\begin{frame}
+\frametitle{患病率}
+\begin{table}
+	\centering
+
+\begin{tabular}{l|rr|r}
+
+疾病	& 患病数	& 统计人群数	& 患病率(10万)\\
+
+\hline
+噬血细胞综合症	& 77	& 5156988	& 1.493119627\\
+
+再生障碍性贫血	& 3316	& 5156982	& 64.3011746\\
+
+血小板减少性紫癜	& 256	& 5156990	& 4.964136056\\
+
+过敏性紫癜	& 1075	& 5156988	& 20.84550129\\
+
+骨髓增生异常综合症	& 315	& 5156988	& 6.108216657\\
+
+急性淋巴细胞白血病	& 134	& 5156988	& 2.598415975\\
+
+急性髓样白血病	& 29	& 5156988	& 0.562343756\\
+
+多发性骨髓瘤	& 727	& 5156988	& 14.09737622\\
+
+淋巴瘤	& 89	& 5156988	& 1.725813595\\
+\hline
+合计	& 6018	&	& 116.6960978\\
+
+\end{tabular}
+\end{table}
+\end{frame}
+
+\section{血液病诊断云平台}
+
+\begin{frame}
+\begin{figure}
+	\centering
+	\includegraphics[width=.9\textwidth]{images/prototype.png}
+\end{figure}
+\end{frame}
+
 
 \end{document}
